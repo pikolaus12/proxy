@@ -4,7 +4,6 @@ const port = 4000;
 const socketPort = 3000;
 const cors = require('cors');
 const path = require('path')
-app.use(cors())
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 app.use(express.static(path.join(__dirname, 'public')));
@@ -12,9 +11,10 @@ const http = require('http').Server(app);
 http.listen(socketPort)
 const server = require('socket.io')(http, {
      cors: {
-         origin: "*"
+         origin: "*:*"
     }
 });
+app.use(cors())
 
 app.get('', (req, res,  next) => {
     res.send({
