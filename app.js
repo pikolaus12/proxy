@@ -11,7 +11,7 @@ const http = require('http').Server(app);
 http.listen(socketPort)
 const server = require('socket.io')(http, {
      cors: {
-         origin: "*:*"
+         origin: "https://socket-proxy.web.app"
     }
 });
 app.use(cors())
