@@ -18,7 +18,7 @@ app.use(cors())
 
 app.get('', (req, res,  next) => {
     res.send({
-        success: true
+        version: '1.0.0'
     })
 })
 
